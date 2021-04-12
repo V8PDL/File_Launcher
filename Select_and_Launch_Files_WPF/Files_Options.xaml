@@ -1,0 +1,24 @@
+﻿<Window x:Name="File_Editing_Window" x:Class="Select_and_Launch_Files_WPF.Files_Options"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Select_and_Launch_Files_WPF"
+        mc:Ignorable="d"
+        Title="Files editing" Height="284.075" Width="531.576" Loaded="File_Editing_Window_Loaded">
+    <Grid>
+        <ComboBox x:Name="Files_Combobox"  DisplayMemberPath="Name" HorizontalAlignment="Left" Margin="115,10,0,0" VerticalAlignment="Top" Width="320" SelectionChanged="Files_Combobox_SelectionChanged" FontSize="14"/>
+        <Button x:Name="Delete_Button" Content="Удалить" HorizontalAlignment="Left" Margin="440,10,0,0" VerticalAlignment="Top" Width="75" Click="Delete_Button_Click" FontSize="14"/>
+        <Image x:Name="Icon_Image" HorizontalAlignment="Left" Height="100" Source="{Binding Path=ImageSource}" Margin="10,10,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="Name_Textbox" HorizontalAlignment="Left" Height="23" Margin="115,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="115,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" FontSize="14"><Run Text="Имя"/><Run Text=":"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="115,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14"><Run Text="Полный путь"/><Run Text=":"/></TextBlock>
+        <TextBox x:Name="Path_Textbox" HorizontalAlignment="Left" Height="44" Margin="10,122,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="425" FontSize="14"  />
+        <TextBlock HorizontalAlignment="Left" Margin="10,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14"><Run Text="Группа"/><Run Text=":"/></TextBlock>
+        <ComboBox x:Name="Groups_Combobox" DisplayMemberPath="Name" HorizontalAlignment="Left" Margin="10,195,0,0" VerticalAlignment="Top" Width="294" FontSize="14"/>
+        <Button x:Name="Change_Group_Button" Content="Изменить группу" HorizontalAlignment="Left" Margin="309,195,0,0" VerticalAlignment="Top" Width="117" FontSize="14" Click="Change_Group_Button_Click"/>
+        <Button x:Name="Save_As_Button" Content="Сохранить" HorizontalAlignment="Left" Margin="440,131,0,0" VerticalAlignment="Top" Width="75" FontSize="14" Click="Save_As_Button_Click" Height="26"/>
+        <Button x:Name="Change_Button" Content="Изменить" HorizontalAlignment="Left" Margin="440,70,0,0" VerticalAlignment="Top" Width="75" FontSize="14" Click="Change_Button_Click"/>
+        <Button x:Name="Open_Button" Content="Открыть" HorizontalAlignment="Left" Margin="440,213,0,0" VerticalAlignment="Top" Width="75" BorderThickness="5" FontSize="14" Click="Open_Button_Click"/>
+    </Grid>
+</Window>

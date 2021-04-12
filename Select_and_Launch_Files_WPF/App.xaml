@@ -1,7 +1,7 @@
-﻿<Application x:Class="User_Files_Launcher.App"
+﻿<Application x:Class="Select_and_Launch_Files_WPF.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:User_Files_Launcher"
+             xmlns:local="clr-namespace:Select_and_Launch_Files_WPF"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          

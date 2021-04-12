@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace User_Files_Launcher.Properties
+namespace Select_and_Launch_Files_WPF.Properties
 {
 
 

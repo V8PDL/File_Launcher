@@ -1,0 +1,39 @@
+﻿<Window x:Name="Main_Window" x:Class="Select_and_Launch_Files_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Select_and_Launch_Files_WPF"
+        mc:Ignorable="d"
+        Title="File and groups adding" Height="484" Width="815" Loaded="Window_Loaded" Closed="Main_Window_Closed">
+    <Grid>
+        <ListBox x:Name="Files_Listbox" HorizontalAlignment="Left" Height="214" Margin="10,10,0,0" VerticalAlignment="Top" Width="607" FontSize="14">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image  Source="{Binding Path=ImageSource, Mode=OneTime}" Width="50"/>
+                        <TextBlock Text="{Binding Path=Name}" MaxWidth="200" MinWidth="200" Margin="5,0,0,0" TextWrapping="Wrap"/>
+                        <TextBlock Text="{Binding Path=Group.Name}" Margin="20,0,0,0" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button x:Name="Add_Files_Button" Content="Добавить файл" HorizontalAlignment="Left" Margin="647,218,0,0" VerticalAlignment="Top" Width="118" Height="30" FontSize="14" Click="Add_Files_Button_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="622,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="137" Width="177" FontSize="14"><Run Text="Добавьте файлы или загрузите их их любой папки (исключая те, прав на которые у вас нет)."/><LineBreak/><Run Text="Чтобы добавить папку, зайдите в нее и выберите "/><Run Text="'PICK_FOLDER.this.directory' in it"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="12,257,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="605" FontSize="14"><Run Text="Вы можете использовать группы и расширения чтобы фильтровать загрузку из папки"/><Run Text=". Чтобы добавить группу, напишите ее название и опишите относящиеся к ней расширения файлов."/></TextBlock>
+        <TextBox x:Name="Groups_Textbox" HorizontalAlignment="Left" Height="23" Margin="12,325,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="378" FontSize="14" KeyDown="Groups_Textbox_KeyDown"/>
+        <TextBlock HorizontalAlignment="Left" Margin="12,301,0,0" TextWrapping="Wrap" Text="Группы:" VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="12,353,0,0" TextWrapping="Wrap" Text="Расширения:" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="Extensions_Textbox" HorizontalAlignment="Left" Height="23" Margin="12,377,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="378" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="406,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="137" Width="393" FontSize="14"><Run Text="Отделяйте каждый элемент пробелом, одна группа - одно слово, может содержать символы "/><Run Text="'_', '-'; "/><Run Text="расширения могут иметь не только вид "/><Run Text="'.exe', "/><Run Text="поддерживается любая подстрока, заканчивающая файл, так, "/><Run Text="'_example.txt' "/><Run Text="найдет все файлы типа "/><Run Text="'*_example.txt'. "/><LineBreak/><Run Text="'Enter' "/><Run Text="когда вы написали имя группы, чтобы "/><Run Text="отобразить "/><Run Text="ее расширения. ."/></TextBlock>
+        <Button x:Name="Add_Group_Button" Content="Добавить/изменить" HorizontalAlignment="Left" Margin="10,410,0,0" VerticalAlignment="Top" Width="136" FontSize="14" Height="32" Click="Add_Group_Button_Click"/>
+        <Button x:Name="Go_Next_Button" Content="Изменить файлы" HorizontalAlignment="Left" Margin="622,260,0,0" VerticalAlignment="Top" Width="176" Height="34" FontSize="14" Click="Go_Next_Button_Click"/>
+        <Button x:Name="Remove_File" Content="Убрать" HorizontalAlignment="Left" Margin="647,147,0,0" VerticalAlignment="Top" Width="118" Height="30" FontSize="14" Click="Remove_File_Click"/>
+        <Button x:Name="Add_Folder_Button" Content="Добавить папку" HorizontalAlignment="Left" Margin="647,183,0,0" VerticalAlignment="Top" Width="118" Height="30" FontSize="14" Click="Add_Directory_Button_Click"/>
+        <Label Content="Имя:" HorizontalAlignment="Left" Margin="11,224,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="Name_Textbox" HorizontalAlignment="Left" Height="23" Margin="63,230,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="554" FontSize="14"/>
+        <Button x:Name="Delete_Group_Button" Content="Удалить группы" HorizontalAlignment="Left" Margin="273,410,0,0" VerticalAlignment="Top" Width="117" Height="32" FontSize="14" Click="Delete_Group_Button_Click"/>
+        <Button x:Name="Show_Groups_Button" Content="Показать группы" HorizontalAlignment="Left" Margin="151,410,0,0" VerticalAlignment="Top" Width="117" Height="32" Click="Show_Groups_Button_Click" FontSize="14"/>
+
+    </Grid>
+</Window>
